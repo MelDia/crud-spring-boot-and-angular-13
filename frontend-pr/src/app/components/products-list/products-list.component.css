@@ -1,0 +1,48 @@
+.btn-search {
+    padding: 6px 10px;
+    border-radius: 0;
+    background-color: var(--main-color);
+    color: var(--tertiary-color);
+}
+
+.input-group {
+    background-color: var(--main-color);
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+input {
+    border: none;
+    outline: none;
+}
+
+input:focus, select:focus, select, input.form-control:focus {
+    outline:none !important;
+    outline-width: 0 !important;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+ul {
+    background-color: var(--main-color);
+}
+
+ul li {
+    border: 2px solid var(--stroke-color);
+    color: var(--highlight-color);
+    font-weight: 500;
+    font-size: 18px;
+}
+
+ul li:hover {
+    background-color:  var(--tertiary-color);
+    color: var(--stroke-color);
+}
+
+.list-group-item.active {
+    z-index: 2;
+    color: var(--stroke-color);
+    background-color: var(--tertiary-color);
+}
+

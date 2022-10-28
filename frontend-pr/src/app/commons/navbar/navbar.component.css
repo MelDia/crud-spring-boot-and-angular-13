@@ -1,0 +1,69 @@
+nav {
+    background-image: linear-gradient(180deg,
+            hsl(0deg 0% 0%) 0%,
+            hsl(240deg 1% 1%) 10%,
+            hsl(240deg 2% 2%) 20%,
+            hsl(240deg 2% 3%) 30%,
+            hsl(240deg 3% 4%) 40%,
+            hsl(240deg 4% 5%) 50%,
+            hsl(240deg 5% 6%) 60%,
+            hsl(240deg 6% 7%) 70%,
+            hsl(240deg 7% 8%) 80%,
+            hsl(240deg 7% 9%) 90%,
+            hsl(240deg 8% 9%) 100%);
+}
+
+.nav-link {
+    color: var(--white-color);
+}
+
+.navbar-brand {
+    color: var(--white-color);
+    font-weight: 700;
+    font-size: 22px;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-img {
+    margin: 10px 15px 10px 25px;
+}
+
+.name-site {
+    font-size: 12px;
+    margin: 0px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--tertiary-color);
+}
+
+.nav-links {
+    justify-content: flex-end;
+}
+
+.nav-link {
+    transition: color 0.5s;
+    transition-timing-function: ease;
+}
+
+.add-product-btn a {
+    background-color: var(--main-color);
+    color: var(--highlight-color);
+    font-weight: 700;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 0px 20px;
+    transition: background-color 0.5s, color 0.5s;
+    transition-timing-function: ease;
+}
+
+.add-product-btn a:hover,
+.nav-link:hover {
+    /* border: 2px solid var(--main-color); */
+    background-color:transparent;
+    color: var(--tertiary-color);
+    transform: translateY(-4px);
+}

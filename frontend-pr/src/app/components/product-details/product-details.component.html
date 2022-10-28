@@ -1,0 +1,107 @@
+<div *ngIf="viewMode; else editable">
+    <div *ngIf="currentProduct.id">
+        <h4 class="title-game">{{ currentProduct.title }}</h4>
+        <div *ngIf="currentProduct.images">
+            <img class="details-img" src="{{currentProduct.images}}" alt="">
+        </div>
+        <div class="description">
+            <label class="details-game">Description:</label>
+            {{ currentProduct.description }}
+        </div>
+        <div class="price">
+            <label class="details-game">Price:</label>
+            {{ currentProduct.price }}
+        </div>
+        <div class="status">
+            <label class="details-game" style="margin-bottom: 20px;">Status:</label>
+            {{ currentProduct.status ? "STOCK" : "&#128711;" }}
+        </div>
+
+        <a class="btn-edit" routerLink="/products/{{ currentProduct.id }}">
+            Edit
+        </a>
+    </div>
+
+    <div *ngIf="!currentProduct">
+        <br />
+        <p>Please click on a Product...</p>
+    </div>
+</div>
+
+<ng-template #editable>
+    <div *ngIf="currentProduct.id" style="width: 75%;margin: 0px 130px;">
+        <!-- <h4>Tutorial</h4> -->
+        <form>
+            <div class="form-group">
+                <label for="title">Name</label>
+                <input type="text" placeholder="Name" class="form-control" id="title" [(ngModel)]="currentProduct.title"
+                    name="title" />
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea type="text" class="form-control" id="description" [(ngModel)]="currentProduct.description"
+                    name="description" rows="3" placeholder="Description"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="price">Price</label>
+                <div class="input-group flex-nowrap">
+                    <span class="input-group-text">US$</span>
+                    <input type="text" class="form-control" placeholder="Price" id="price" [ngModelOptions]="{standalone: true}" [(ngModel)]="currentProduct.price">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col">
+                        <label><strong>Inventory:</strong></label>
+                        {{ currentProduct.status ? "STOCK" : "&#128711;" }}
+                    </div>
+                    <div class="col">
+                        <div class="row">
+                            <div class="col">
+                                <h6>You want to change your inventory? </h6>
+                            </div>
+                            <div class="col">
+                                <button type="button" class="btn btn-danger mr-2" *ngIf="currentProduct.status"
+                                    (click)="update(false)">
+                                    IS OUT
+                                </button>
+                                <button type="button" *ngIf="!currentProduct.status" class="btn btn-primary mr-2"
+                                    (click)="update(true)">
+                                    IN STOCK
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="msg" class="alert alert-dismissible fade show d-flex align-items-center mt-5" role="alert">
+                    <div>
+                        {{ msg }}
+                    </div>
+
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+
+            </div>
+        </form>
+
+        <div class="row buttons-group">
+            <div class="col-2">
+                <button class="btn btn-danger mr-2" (click)="deleteProduct()">
+                    Delete
+                </button>
+            </div>
+
+            <div class="col-2">
+                <button type="submit" class="btn btn-primary mb-2" (click)="updateProduct()">
+                    Update
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <div *ngIf="!currentProduct.id">
+        <p>Cannot access this Tutorial...</p>
+    </div>
+</ng-template>

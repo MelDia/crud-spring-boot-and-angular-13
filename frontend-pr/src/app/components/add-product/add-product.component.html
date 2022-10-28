@@ -1,0 +1,41 @@
+<div style="width: 75%;margin: 0px 130px;">
+    <div class="submit-form">
+        <div *ngIf="!submit">
+            <div class="form-group">
+                <label for="title">Name</label>
+                <input type="text" class="form-control" id="title" required [(ngModel)]="prod.title" name="title" />
+            </div>
+
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea type="text" class="form-control" id="description" [(ngModel)]="prod.description"
+                    name="description" rows="3" placeholder="Description" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="price">Price</label>
+                <div class="input-group flex-nowrap">
+                    <span class="input-group-text">US$</span>
+                    <input type="text" class="form-control" placeholder="Price" id="price" [ngModelOptions]="{standalone: true}" [(ngModel)]="prod.price">
+                </div>
+            </div>
+
+            <div class="form-group" style="text-align: center;">
+                <button (click)="saveProduct()" class="btn btn-success">Submit</button>
+            </div>
+        </div>
+
+        <div *ngIf="submit" class="submitted">
+            <h4>Product was submitted successfully!</h4>
+            <div class="row">
+                <div class="col">
+                    <button class="btn btn-back" (click)="back()"> Back</button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-success" (click)="newProduct()">Add new product</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

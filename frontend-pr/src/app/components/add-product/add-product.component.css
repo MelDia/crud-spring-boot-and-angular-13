@@ -1,0 +1,44 @@
+.btn-success {
+    background-color: var(--tertiary-color);
+    border: none;
+    border-radius: 20px;
+    color: var(--main-color);
+    font-weight: 700;
+    padding: 10px;
+    transition: background-color 0.5s, color 0.5s;
+    transition-timing-function: ease;
+}
+
+.btn-success:hover {
+    color: var(--tertiary-color);
+    background-color: var(--main-color);
+    transform: translateY(-4px);
+}
+
+.btn-back {
+    background-color: var(--tertiary-color);
+    border: none;
+    border-radius: 20px;
+    color: var(--main-color);
+    font-weight: 700;
+    padding: 10px;
+    transition: background-color 0.5s, color 0.5s;
+    transition-timing-function: ease;
+}
+
+.btn-back:hover {
+    color: var(--tertiary-color);
+    background-color: var(--main-color);
+    transform: translateY(-4px);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.submitted {
+    background-color: var(--highlight-color);
+    padding: 12px;
+    border-radius: 20px;
+    color: var(--main-color);
+}

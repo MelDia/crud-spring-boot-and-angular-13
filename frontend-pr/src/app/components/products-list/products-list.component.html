@@ -1,0 +1,23 @@
+<div class="list row">
+    <div class="col-md-12">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Search by title" [(ngModel)]="title" />
+            <div class="input-group-append">
+                <button class="btn btn-search" type="button" (click)="searchTitle()">
+                    <i class="bi bi-search"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let prod of products; let i = index"
+                [class.active]="i == index" (click)="setActiveProduct(prod, i)">
+                {{ prod.title }}
+            </li>
+        </ul>
+    </div>
+    <div class="col-md-6">
+        <app-product-details [viewMode]="true" [currentProduct]="currentProduct"></app-product-details>
+    </div>
+</div>
